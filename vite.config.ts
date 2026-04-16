@@ -13,4 +13,5 @@ export default defineConfig({
     __MOUTH_COUNT__: fs.readdirSync('./public/spoderman/mouth').length,
     __CLOTHING_COUNT__: fs.readdirSync('./public/spoderman/clothing').length,
   },
+  base: "/spoderman-generator/"
 })
