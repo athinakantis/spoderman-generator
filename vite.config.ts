@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import fs from 'fs';
 
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -13,5 +12,5 @@ export default defineConfig({
     __MOUTH_COUNT__: fs.readdirSync('./public/spoderman/mouth').length,
     __CLOTHING_COUNT__: fs.readdirSync('./public/spoderman/clothing').length,
   },
-  base: "/spoderman-generator/"
+  base: process.env.NODE_ENV === "development" ? "/" : "/spoderman-generator/"
 })

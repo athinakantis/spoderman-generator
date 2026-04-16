@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 import { useRef } from "react";
 
 function App() {
+  const base = import.meta.env.BASE_URL;
   const canvasRef = useRef<HTMLDivElement>(null);
   const [spoderman, setSpoderman] = useState({
     background: "#ccf9ff",
@@ -82,10 +83,10 @@ function App() {
         </div>
 
         <div ref={canvasRef} className="w-75 relative *:w-75 h-78.5" style={{ backgroundColor: spoderman.background }}>
-          <img src={`/spoderman/hair/hair_${hair.value}.png`} className="absolute z-6" />
-          <img src={`/spoderman/eyes/eyes_${eyes.value}.png`} className="absolute z-4" />
-          <img src={`/spoderman/mouth/mouth_${mouth.value}.png`} className="absolute z-6" />
-          <img src={`/spoderman/clothing/clothing_${clothing.value}.png`} className="absolute z-3" />
+          <img src={`${base}spoderman/hair/hair_${hair.value}.png`} className="absolute z-6" />
+          <img src={`${base}spoderman/eyes/eyes_${eyes.value}.png`} className="absolute z-4" />
+          <img src={`${base}spoderman/mouth/mouth_${mouth.value}.png`} className="absolute z-6" />
+          <img src={`${base}spoderman/clothing/clothing_${clothing.value}.png`} className="absolute z-3" />
           <>
             <svg width="0" height="0" className="absolute">
               <defs>
@@ -102,7 +103,7 @@ function App() {
               style={{ filter: "url(#skin-color)" }}
             />
           </>
-          <img src="/spoderman/base.png" className="absolute z-4" />
+          <img src={`${base}spoderman/base.png`} className="absolute z-4" />
         </div>
       </div>
 
