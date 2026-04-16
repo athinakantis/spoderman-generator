@@ -98,7 +98,7 @@ function App() {
             </svg>
 
             <img
-              src="/spoderman/skin.png"
+              src={`${base}spoderman/skin.png`}
               className="absolute z-2"
               style={{ filter: "url(#skin-color)" }}
             />
